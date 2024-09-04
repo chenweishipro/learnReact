@@ -6,7 +6,7 @@ import React from 'react'
 // import ReactDOM from 'react-dom/client'
 
 // 引入antDesign
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 
 // 17
 
