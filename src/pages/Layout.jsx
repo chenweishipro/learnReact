@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
+
+import MyMenu from '../components/MyMenu/MyMenu'
 
 export default class layout extends Component {
   render() {
@@ -7,7 +8,10 @@ export default class layout extends Component {
       <div>
         {/* 顶部导航开始 */}
         <div>
-          🧭 导航
+         <MyMenu/>
+          {/* <NavLink to={'/'}>首页</NavLink>
+          <NavLink to={'/house'}>房屋</NavLink>
+          <NavLink to={'/news'}>新闻</NavLink> */}
         </div>
         {/* 顶部导航结束 */}
         {/* 路由出口开始 */}
