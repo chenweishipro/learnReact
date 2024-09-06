@@ -7,7 +7,42 @@ import logo from '../../assets/imgs/logo.jpg'
 
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 
+import {Menu, Dropdown, Button} from 'antd';
+
+
+import 
+
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="#">
+        北京
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="#">
+        上海
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="#">
+        重庆
+      </a>
+    </Menu.Item>
+  </Menu>
+);
+
+
+
 export default class MyMenu extends Component {
+
+  // 页面加载，发送请求
+  componentDidMount() {
+   
+      
+   
+  }
   render() {
     return (
       <div className='menu'>
@@ -17,7 +52,14 @@ export default class MyMenu extends Component {
             <img src={logo} width={180} height={72}alt="" />
             </div>
           {/* 城市切换 */}
-          <span>北京</span>
+          <div>
+         
+          <Dropdown overlay={menu} placement="bottomCenter">
+            <Button>北京</Button>
+          </Dropdown>
+          </div>
+          
+        
           
           <div className="right">
             {/* 右侧 */}
