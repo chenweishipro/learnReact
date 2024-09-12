@@ -9,41 +9,53 @@ import { NavLink } from 'react-router-dom/cjs/react-router-dom.min'
 
 import {Menu, Dropdown, Button} from 'antd';
 
+import api from './../../api/index'
 
-import 
 
 
-const menu = (
-  <Menu>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="#">
-        北京
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="#">
-        上海
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="#">
-        重庆
-      </a>
-    </Menu.Item>
-  </Menu>
-);
+
 
 
 
 export default class MyMenu extends Component {
 
+state = {
+  cities:["北京", "上海", "深圳"] // 城市下拉列表
+}
+
+
   // 页面加载，发送请求
   componentDidMount() {
-   
+     api.getCities()
+     .then(res=>{
+      this.setState({
+        cities: res
+      })
+     })
+     
       
    
   }
   render() {
+
+    const menu = (
+      <Menu>
+        {
+          console.log(this.state.cities)
+          this.state.cities.map((item) => {
+            return (
+              <Menu.Item>
+                <a target='_blank' rel='noopener noreferrer' href='##'>
+                  {item}
+                </a>
+              </Menu.Item>
+            )
+          })
+        }
+      </Menu>
+    );
+
+
     return (
       <div className='menu'>
         <div className='container'>
